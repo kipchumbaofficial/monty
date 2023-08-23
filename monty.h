@@ -33,7 +33,7 @@ extern int int_value;
 int executor(int line_number, char *command, *char arg, stack_t stack);
 void pushError(char *buffer, unsigned int line_number, stack_t stack);
 void free_stack(stack_t stack);
-void not_instruction(char *buffer, unsigned int line_number, stack_t stack, char *command);
-void push_function(stack_t **stack, unsigned intvline_numbet);
+void not_ins(char *buffer, unsigned int line_number, stack_t stack, char *cmd);
+void push_function(stack_t **stack, unsigned int line_number);
 
 #endif
