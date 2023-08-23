@@ -1,5 +1,15 @@
 #ifndef MONTY
 #define MONTY
+
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <errno.h>
+#include <sys/stat.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
 /**
  * struct stack_s - DLL rep of a stack
  * @n: int
@@ -30,9 +40,9 @@ typedef struct instruction_s
 
 extern int int_value;
 
-int executor(int line_number, char *command, *char arg, stack_t stack);
-void pushError(char *buffer, unsigned int line_number, stack_t stack);
-void free_stack(stack_t stack);
+int executor(int line_number, char *command, char *arg, stack_t *stack);
+void pushError(char *buffer, unsigned int line_number, stack_t *stack);
+void free_stack(stack_t *stack);
 void not_ins(char *buffer, unsigned int line_number, stack_t stack, char *cmd);
 void push_function(stack_t **stack, unsigned int line_number);
 

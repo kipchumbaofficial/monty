@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	if (argc == 2)
 	{
-		filehandle(argv[i]);
+		filehandle(argv[1]);
 	}
 	else
 	{
