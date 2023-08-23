@@ -10,11 +10,11 @@ int main(int argc, char *argv[])
 {
 	if (argc == 2)
 	{
-		filehandle(argv[1]);
+		file_handler(argv[1]);
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "USAGE: Montyfile\n");
+		dprintf(STDERR_FILENO, "USAGE: Monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	return (0);
