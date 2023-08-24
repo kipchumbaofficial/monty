@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "monty.h"
 int int_value;
+FILE *fd;
+char *buffer;
 /**
  * file_handler - Handles file passed
  * @file_path: path of file
@@ -10,11 +12,10 @@ void file_handler(char *file_path)
 {
 	unsigned int retval = 0, line_number = 0;
 	stack_t *stack = NULL;
-	char *buffer = NULL;
 	size_t buffsize = 0;
 	char *command = NULL, *arg = NULL;
-	FILE *fd;
 
+	buffer = NULL;
 	fd = fopen(file_path, "r");
 	if (fd)
 	{
@@ -62,6 +63,7 @@ int executor(int line_number, char *command, char *arg, stack_t **stack)
 	instruction_t ops[] = {
 		{"push", push_function},
 		{"pall", pall_function},
+		{"pint", pint_function},
 		{NULL, NULL}
 	};
 

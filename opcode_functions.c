@@ -48,3 +48,21 @@ void pall_function(stack_t **stack, unsigned int line_number)
 		temp = temp->next;
 	}
 }
+/**
+ * pint_function - Prints top element in stack
+ * @stack: Stack
+ * @line_number: Line number
+ *
+ */
+void pint_function(stack_t **stack, unsigned int line_number)
+{
+	if (!stack ||  !*stack)
+	{
+		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n", line_number);
+		fclose(fd);
+		free_stack(*stack);
+		free(buffer);
+	}
+	else
+		printf("%d\n", (*stack)->n);
+}

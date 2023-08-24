@@ -40,6 +40,8 @@ typedef struct instruction_s
 }  instruction_t;
 
 extern int int_value;
+extern FILE *fd;
+extern char *buffer;
 
 void push_function(stack_t **stack, unsigned int line_number);
 void file_handler(char *file_path);
@@ -49,5 +51,6 @@ void pall_function(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 void not_ins(FILE *fd, char *buffer, unsigned int line_number, stack_t *stack, char *cmd);
 int isDigit(char *arg);
+void pint_function(stack_t **stack, unsigned int line_number);
 
 #endif
