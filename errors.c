@@ -7,7 +7,7 @@
  */
 void pushError(char *buffer, unsigned int line_number, stack_t *stack)
 {
-	dprintf(STDERR_FILENO, "L%u: Usage: push integer", line_number);
+	dprintf(STDERR_FILENO, "L%u: Usage: push integer\n", line_number);
 	free(buffer);
 	free_stack(stack);
 }

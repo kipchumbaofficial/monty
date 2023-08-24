@@ -1,4 +1,4 @@
-push 1
+push d
 push 2
 push 3
 pall
