@@ -44,7 +44,7 @@ extern int int_value;
 void push_function(stack_t **stack, unsigned int line_number);
 void file_handler(char *file_path);
 int executor(int line_number, char *command, char *arg, stack_t **stack);
-void pushError(unsigned int line_number);
+void pushError(char *buffer, unsigned int line_number, stack_t *stack);
 void pall_function(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
 void not_ins(FILE *fd, char *buffer, unsigned int line_number, stack_t *stack, char *cmd);

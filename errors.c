@@ -5,9 +5,12 @@
  * @line_number: Line_number
  * @stack: Stack
  */
-void pushError(unsigned int line_number)
+void pushError(char *buffer, unsigned int line_number, stack_t *stack)
 {
 	dprintf(STDERR_FILENO, "L%u: Usage: push integer\n", line_number);
+	free(buffer);
+	free_stack(stack);
+	exit(EXIT_FAILURE);
 }
 
 /**

@@ -32,7 +32,7 @@ void file_handler(char *file_path)
 			arg = strtok(NULL, " \n\t\r");
 			retval = executor(line_number, command, arg, &stack);
 			if (retval == 1)
-				pushError(line_number);
+				pushError(buffer, line_number, stack);
 			if (retval == 2)
 				not_ins(fd, buffer, line_number, stack, command);
 		}
