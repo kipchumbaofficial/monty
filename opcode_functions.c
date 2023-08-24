@@ -62,6 +62,7 @@ void pint_function(stack_t **stack, unsigned int line_number)
 		fclose(fd);
 		free_stack(*stack);
 		free(buffer);
+		exit(EXIT_FAILURE);
 	}
 	else
 		printf("%d\n", (*stack)->n);
