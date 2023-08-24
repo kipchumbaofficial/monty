@@ -27,7 +27,7 @@ int isDigit(char *arg)
 
 	if (arg == NULL)
 		return (0);
-	if (*temp = '-')
+	if (*temp == '-')
 		temp++;
 
 	for (; *temp != '\0'; temp++)
