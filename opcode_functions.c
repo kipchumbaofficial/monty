@@ -9,10 +9,12 @@ void push_function(stack_t **stack, unsigned int line_number)
 	stack_t *new;
 
 	(void)line_number;
+	if (stack == NULL)
+		return;
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: malloc faild\n");
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = int_value;
