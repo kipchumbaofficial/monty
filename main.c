@@ -6,6 +6,8 @@
  *
  * Return: Always 0
  */
+extern int int_value;
+
 int main(int argc, char *argv[])
 {
 	if (argc == 2)
