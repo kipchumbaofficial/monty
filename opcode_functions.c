@@ -27,3 +27,21 @@ void push_function(stack_t **stack, unsigned int line_number)
 		*stack = new;
 	}
 }
+/**
+ * pall_function - prints all ellements in the stack
+ * @stack: stack
+ * @line_number: Line number
+ *
+ */
+void pall_function(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp = *stack;
+
+	if (stack == NULL)
+		return;
+	while (temp != NULL)
+	{
+		printf("%d\n", temp->n);
+		temp = temp->next;
+	}
+}

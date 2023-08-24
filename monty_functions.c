@@ -61,6 +61,7 @@ int executor(int line_number, char *command, char *arg, stack_t **stack)
 	int i = 0;
 	instruction_t ops[] = {
 		{"push", push_function},
+		{"pall", pall_function},
 		{NULL, NULL}
 	};
 
