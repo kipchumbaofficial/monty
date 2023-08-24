@@ -1,4 +1,5 @@
 #include "monty.h"
+int int_value;
 /**
  * file_handler - Handles file passed
  * @file_path: path of file
