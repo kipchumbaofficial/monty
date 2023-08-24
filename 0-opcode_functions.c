@@ -95,3 +95,14 @@ void pop_function(stack_t **stack, unsigned int line_number)
 		free(temp);
 	}
 }
+
+/**
+ * nop_function - Does nothing
+ * @stack: Pointer to stack
+ * @line_number: Line number
+ */
+void nop_function(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
