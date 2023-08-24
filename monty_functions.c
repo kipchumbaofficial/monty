@@ -64,6 +64,7 @@ int executor(int line_number, char *command, char *arg, stack_t **stack)
 		{"push", push_function},
 		{"pall", pall_function},
 		{"pint", pint_function},
+		{"pop", pop_function},
 		{NULL, NULL}
 	};
 
