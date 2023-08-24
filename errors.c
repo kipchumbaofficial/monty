@@ -5,11 +5,9 @@
  * @line_number: Line_number
  * @stack: Stack
  */
-void pushError(char *buffer, unsigned int line_number, stack_t *stack)
+void pushError(unsigned int line_number)
 {
 	dprintf(STDERR_FILENO, "L%u: Usage: push integer\n", line_number);
-	free(buffer);
-	free_stack(stack);
 }
 
 /**
@@ -21,7 +19,7 @@ void pushError(char *buffer, unsigned int line_number, stack_t *stack)
  */
 void not_ins(FILE *fd, char *buffer, unsigned int line_number, stack_t *stack, char *cmd)
 {
-	dprintf(STDERR_FILENO, "L%u: uknown instructions %s\n", line_number, cmd);
+	dprintf(STDERR_FILENO, "L%u: uknown instruction %s\n", line_number, cmd);
 	free(buffer);
 	free_stack(stack);
 	fclose(fd);
