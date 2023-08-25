@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "monty.h"
 int int_value;
 FILE *fd;
