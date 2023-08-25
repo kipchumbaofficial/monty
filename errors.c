@@ -23,7 +23,7 @@ void pushError(FILE *fd, char *buffer, unsigned int line_number, stack_t *stack)
  */
 void not_ins(FILE *fd, char *buffer, unsigned int line_number, stack_t *stack, char *cmd)
 {
-	dprintf(STDERR_FILENO, "L%u: uknown instruction %s \n", line_number, cmd);
+	dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, cmd);
 	free(buffer);
 	free_stack(stack);
 	fclose(fd);
