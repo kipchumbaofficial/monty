@@ -55,7 +55,7 @@ void sub_function(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if (!stack || !*stack || (*stack)->next)
+	if (!stack || !*stack || !(*stack)->next)
 	{
 		dprintf(STDERR_FILENO, "L%u: can't sub, stack too short\n", line_number);
 		fclose(fd);
