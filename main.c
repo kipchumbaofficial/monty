@@ -6,8 +6,6 @@
  *
  * Return: Always 0
  */
-extern int int_value;
-
 int main(int argc, char *argv[])
 {
 	if (argc == 2)
@@ -16,7 +14,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "USAGE: Monty file\n");
+		dprintf(STDERR_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	return (0);
