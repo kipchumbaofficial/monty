@@ -68,6 +68,9 @@ int executor(int line_number, char *command, char *arg, stack_t **stack)
 		{"add", add_function},
 		{"sub", sub_function},
 		{"nop", nop_function},
+		{"div", div_function},
+		{"mul", mul_function},
+		{"mod", mod_function},
 		{NULL, NULL}
 	};
 
