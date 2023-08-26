@@ -1,5 +1,6 @@
 #ifndef MONTY
 #define MONTY
+#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <fcntl.h>
@@ -54,11 +55,7 @@ int isDigit(char *arg);
 void pint_function(stack_t **stack, unsigned int line_number);
 void pop_function(stack_t **stack, unsigned int line_number);
 void swap_function(stack_t **stack, unsigned int line_number);
-void nop_function(stack_t **stack, unsigned int line_number);
 void add_function(stack_t **stack, unsigned int line_number);
 void sub_function(stack_t **stack, unsigned int line_number);
-void div_function(stack_t **stack, unsigned int line_number);
-void mul_function(stack_t **stack, unsigned int line_number);
-void mod_function(stack_t **stack, unsigned int line_number);
 
 #endif
