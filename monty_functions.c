@@ -42,7 +42,7 @@ void file_handler(char *file_path)
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", file_path);
+		fprintf(stderr, "Error: Can't open file %s\n", file_path);
 		exit(EXIT_FAILURE);
 	}
 }

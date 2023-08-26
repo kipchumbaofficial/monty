@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "monty.h"
 /**
  * push_function -Pushes tostack
@@ -14,7 +15,7 @@ void push_function(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = int_value;
@@ -57,7 +58,7 @@ void pint_function(stack_t **stack, unsigned int line_number)
 {
 	if (!stack ||  !*stack)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		fclose(fd);
 		free_stack(*stack);
 		free(buffer);
@@ -78,7 +79,7 @@ void pop_function(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", line_number);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		fclose(fd);
 		free_stack(*stack);
 		free(buffer);

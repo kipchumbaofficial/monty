@@ -1,4 +1,5 @@
- #include "monty.h"
+#include <stdio.h>
+#include "monty.h"
 /**
  * swap_function - Swaps top 2 elements
  * @stack: Stack pointer
@@ -12,7 +13,7 @@ void swap_function(stack_t **stack, unsigned int line_number)
 
 	if (!*stack || !stack || !(*stack)->next)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
 		fclose(fd);
 		free_stack(*stack);
 		free(buffer);
@@ -33,7 +34,7 @@ void add_function(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack || !(*stack)->next)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		fclose(fd);
 		free_stack(*stack);
 		free(buffer);
@@ -57,7 +58,7 @@ void sub_function(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack || !(*stack)->next)
 	{
-		dprintf(STDERR_FILENO, "L%u: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 		fclose(fd);
 		free_stack(*stack);
 		free(buffer);

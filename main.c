@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "monty.h"
 /**
  * main - Entry point
@@ -14,7 +15,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	return (0);
