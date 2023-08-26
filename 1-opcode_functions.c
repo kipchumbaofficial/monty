@@ -81,7 +81,7 @@ void div_function(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack ||!(*stack)->next)
 	{
-		fprintf(stderr, "L%u: cant div, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 		fclose(fd);
 		free_stack(*stack);
 		free(buffer);
