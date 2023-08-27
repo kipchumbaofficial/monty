@@ -30,3 +30,13 @@ void not_ins(FILE *fd, char *buffer, unsigned int line_number, stack_t *stack, c
 	fclose(fd);
 	exit(EXIT_FAILURE);
 }
+/**
+ * free_func - Cleans after error
+ * @stack: pointer to stack
+ */
+void free_func(stack_t *stack)
+{
+	fclose(fd);
+	free_stack(stack);
+	free(fd);
+}

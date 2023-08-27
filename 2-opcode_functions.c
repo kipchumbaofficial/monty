@@ -86,3 +86,36 @@ void pchar_function(stack_t **stack, unsigned int line_number)
 	putchar(c);
 	putchar('\n');
 }
+/**
+ * pstr_function - Prints string from stack elements
+ * @stack: stack pointer
+ * @line_number: Line number
+ */
+void pstr_function(stack_t **stack, unsigned int line_number)
+{
+	char c;
+	int i;
+
+	if (!stack || !*stack)
+	{
+		fprintf(stderr, "L%u: can't pstr, stack empty\n", line_number);
+		free_func(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+	i = (*stack)->n;
+	if (i < 0 || i > 127)
+	{
+		fprintf(stderr, "L%u: can't pstr, value out of range\n", line_number);
+		free_func(*stack);
+		exit(EXIT_FAILURE);
+	}
+	while ((*stack)->next && i != 0)
+	{
+		c = (char)i;
+		printf("%c", c);
+		*stack = (*stack)->next;
+		i = (*stack)->n;
+	}
+	putchar('\n');
+}

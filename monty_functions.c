@@ -72,6 +72,7 @@ int executor(int line_number, char *command, char *arg, stack_t **stack)
 		{"mul", mul_function},
 		{"mod", mod_function},
 		{"pchar", pchar_function},
+		{"pstr", pstr_function},
 		{NULL, NULL}
 	};
 
