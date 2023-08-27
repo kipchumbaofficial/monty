@@ -99,7 +99,9 @@ void pstr_function(stack_t **stack, unsigned int line_number)
 	if (!stack || !*stack)
 	{
 		fprintf(stderr, "L%u: can't pstr, stack empty\n", line_number);
-		free_func(*stack);
+		free(buffer);
+		free_stack(*stack);
+		fclose(fd);
 		exit(EXIT_FAILURE);
 	}
 
@@ -107,7 +109,9 @@ void pstr_function(stack_t **stack, unsigned int line_number)
 	if (i < 0 || i > 127)
 	{
 		fprintf(stderr, "L%u: can't pstr, value out of range\n", line_number);
-		free_func(*stack);
+		free_stack(*stack);
+		free(buffer);
+		fclose(fd);
 		exit(EXIT_FAILURE);
 	}
 	if (!(*stack)->prev && (*stack)->next)

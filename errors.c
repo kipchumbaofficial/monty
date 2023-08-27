@@ -39,4 +39,5 @@ void free_func(stack_t *stack)
 	fclose(fd);
 	free_stack(stack);
 	free(fd);
+	exit(EXIT_FAILURE);
 }
