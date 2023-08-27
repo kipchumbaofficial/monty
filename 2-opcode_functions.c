@@ -10,6 +10,7 @@ void mul_function(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack || !(*stack)->next)
 	{
+		printf("\n");
 		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
 		fclose(fd);
 		free(buffer);
@@ -98,6 +99,7 @@ void pstr_function(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack)
 	{
+		printf("\n");
 		fprintf(stderr, "L%u: can't pstr, stack empty\n", line_number);
 		free(buffer);
 		free_stack(*stack);
