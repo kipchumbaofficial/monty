@@ -54,3 +54,35 @@ void mod_function(stack_t **stack, unsigned int line_number)
 	*stack = temp->next;
 	free(temp);
 }
+/**
+ * pchar - pchar opcode function
+ * @stack: Pointer to stack
+ * @line_number: line number
+ */
+void pchar_function(stack_t **stack, unsigned int line_number)
+{
+	char c;
+	int i;
+
+	if (!stack  || !*stack)
+	{
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		fclose(fd);
+		free(stack);
+		free(buffer);
+		exit(EXIT_FAILURE);
+	}
+	i = (*stack)->n;
+
+	if (i < 0 || i > 127)
+	{
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		fclose(fd);
+		free_stack(*stack);
+		free(buffer);
+		exit(EXIT_FAILURE);
+	}
+	c = (char)i;
+	putchar(c);
+	putchar('\n');
+}
