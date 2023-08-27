@@ -110,7 +110,7 @@ void pstr_function(stack_t **stack, unsigned int line_number)
 		free_func(*stack);
 		exit(EXIT_FAILURE);
 	}
-	if (!(*stack->prev) && (*stack)->next)
+	if (!(*stack)->prev && (*stack)->next)
 	{
 		c = (char)i;
 		printf("%c", c);
